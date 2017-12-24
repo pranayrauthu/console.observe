@@ -1,0 +1,25 @@
+{
+  "name": "console.observe",
+  "version": "1.0.0",
+  "description": "console utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranayrauthu/console.observe.git"
+  },
+  "keywords": [
+    "console"
+  ],
+  "author": "pranay rauthu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranayrauthu/console.observe/issues"
+  },
+  "homepage": "https://github.com/pranayrauthu/console.observe#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}

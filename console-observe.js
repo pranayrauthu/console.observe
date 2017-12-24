@@ -8,27 +8,28 @@
     
     /**
      * 
-     * @param {String} objName - Name of the Object
-     * @param {Object} context - Observing context
-     * @param {Object} callback - Observing callback
+     * @param {Object} obj - Object to observe
+     * @param {Function} callback - Observing callback
      */
-    function _observe(objName, context, callback) {
+    function _observe(obj, callback) {
         
         //handler for proxy
         var handler = {
             get: function (target, prop) {
-                callback.call(context, prop)
+                console.log(`accessed: ${prop}`);
+                callback(prop);
                 //default behaviour
                 return Reflect.get(target, prop);
             },
             set: function (target, prop, value) {
-                callback(context, prop, value);
+                console.log(`set ${prop}: ${value}`);
+                callback(prop, value);
                 //default behaviour
                 return Reflect.set(target, prop, value);
             }
         }
     
-        context[objName] = new Proxy(context[objName], handler);
+        return new Proxy(obj, handler);
     };
 
     return _observe;
